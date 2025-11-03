@@ -1,12 +1,12 @@
 import './App.css'
 import Header from './pages/Header'
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import HomePage from './pages/HomePage'
 function App() {
 
   return (
     <>
-<Header/>
+  <Header/>
+  <HomePage/>
     </>
   )
 }

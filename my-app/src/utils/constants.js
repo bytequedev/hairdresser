@@ -2,8 +2,8 @@ export const COLORS = {
   primary: "#DF2F80",       
   background: "#FFECF6",    //background 
   second: "#FFF8FC",        
-  white: "#ffffffff",   
-  black: "#000000ff",  
+  white: "#ffffff",   
+  black: "#000000",  
   wp:"#45DD4D"
 };
 
