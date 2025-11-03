@@ -1,0 +1,107 @@
+/* === Genel Header Yapısı === */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* === Logo Alanı (Görsel + Metin) === */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 120px;
+  height: 70px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: -20px;
+
+}
+
+.logo-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.logo-subtitle {
+  font-size: 14px;
+  color: #7a7979;
+  margin: 0;
+}
+/* === Menü === */
+.nav-menu-wrapper {
+  flex: 1; /* ortalama alanı kapsar */
+  display: flex;
+  justify-content: center; /* menüyü ortala */
+}
+
+/* Menü öğeleri */
+.nav-menu {
+  display: flex;
+  gap: 25px;
+}
+
+@media (max-width: 991px) {
+  .nav-menu {
+    display: flex !important;
+    flex-direction: column;
+    gap: 15px;
+    
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.nav-item {
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-weight:bold;
+  
+}
+
+.nav-item:hover {
+  background-color: #FFECF6;
+  color: #DF2F80;
+}
+
+.nav-item.active {
+  background-color: #FFECF6; /* açık pembe */
+  color: #DF2F80; /* primary */
+}
+
+/* === WhatsApp Butonu === */
+.wp-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.wp-button:hover {
+  opacity: 0.85;
+  transform: scale(1.03);
+}
