@@ -20,12 +20,12 @@ function HeroSection() {
 
       {/* butonlar */}
       <div className="d-flex flex-wrap gap-4 mb-5">
-        <a className="btn-custom btn-primary-custom">
-          <i className="fa-solid fa-calendar me-2 text-nowrap fs-4"></i>
+        <a className="btn-custom btn-primary-custom text-nowrap">
+          <i className="fa-solid fa-calendar me-2 fs-4"></i>
           Hemen Randevu Al
         </a>
-        <a className="btn-custom btn-secondary-custom">
-          <i className="fa-brands fa-whatsapp me-2 text-nowrap fs-3"></i>
+        <a className="btn-custom btn-secondary-custom text-nowrap">
+          <i className="fa-brands fa-whatsapp me-2 fs-3"></i>
           WhatsApp ile İletişim
         </a>
       </div>
