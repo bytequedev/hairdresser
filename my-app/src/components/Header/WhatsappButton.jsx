@@ -12,8 +12,7 @@ const WhatsappButton = () => {
       className="wp-button"
       style={{ backgroundColor: COLORS.wp }}
     >
-      <MdWhatsapp size={22} />
-      <span>WhatsApp</span>
+      <MdWhatsapp size={25} />
     </a>
   );
 };
