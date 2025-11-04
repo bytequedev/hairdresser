@@ -3,7 +3,7 @@ import "../styles/Home.css";
 import HeroSection from "../components/HomePage/HeroSection";
 import LogoSection from "../components/HomePage/LogoSection";
 
-function HomePage() {
+const HomePage = () => {
   return (
     <section className="home-page">
       <div className="container-fluid py-5 px-4 px-lg-5">

@@ -1,12 +1,12 @@
 import React from "react";
 import { COLORS } from "../../utils/constants";
 import "../../styles/Header.css";
-import logoImg from "../../assets/eliflogo.png"; 
+
 
 const Logo = () => {
   return (
     <div className="logo-container">
-      <img src={logoImg} alt="Logo" className="logo-image" />
+      <img src="/assets/eliflogo.png" alt="Logo" className="logo-image" />
 
       <div className="logo-text">
         <h1 className="logo-title" style={{ color: COLORS.primary }}>

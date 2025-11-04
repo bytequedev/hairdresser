@@ -1,6 +1,6 @@
 import React from "react";
 
-function HeroSection() {
+const HeroSection = () => {
   return (
     <div className="col-12 col-lg-6  order-1 order-lg-0">
 

@@ -1,0 +1,99 @@
+.text-color {
+  color: var(--color-primary);
+}
+
+.text-pink {
+  color: var(--color-primary);
+}
+.d-flex > .btn-custom {
+  flex: 1;
+  text-align: center;
+}
+
+.btn-custom{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  border: 2px solid;
+  font-weight: 200;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 12px 12px;
+  font-size: 16px;
+}
+
+.btn-pink{
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.btn-pink:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-white);
+  color: var(--color-white);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(223, 47, 128, 0.3);
+}
+
+.btn-pink:active{
+  transform: translateY(0) scale(1); 
+}
+
+.btn-outline-pink {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-pink:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-white);
+  color: var(--color-white);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(223, 47, 128, 0.2);
+}
+.btn-outline-pink:active{
+    transform: translateY(0) scale(1); 
+}
+
+.gallery-item {
+  height: 300px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid var(--color-white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-white);
+}
+
+.gallery-item img {
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .gallery-item {
+    height: 250px;
+  }
+}
