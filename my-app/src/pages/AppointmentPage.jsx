@@ -7,8 +7,8 @@ import AppointmentForm from "../components/AppointmentPage/AppointmentForm";
 
 const AppointmentPage = () => {
   return (
-    <section className="appointment-page">
-      <div className="container-fluid py-3 px-4 px-lg-5">
+    <section className="appointment-page" id="randevu">
+      <div className="container-fluid py-4 px-4 px-lg-5">
         <div className="row align-items-start g-4 g-lg-5 mx-0 ">
           <AppointmentHeader/>
          <AppointmentMaps/>
