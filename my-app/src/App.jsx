@@ -6,6 +6,7 @@ import WorksPage from './pages/WorksPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import AppointmentPage from './pages/AppointmentPage'
+import Footer from './pages/Footer'
 function App() {
 
   return (
@@ -17,6 +18,7 @@ function App() {
   <AppointmentPage/>
   <AboutPage/>
   <ContactPage/>
+  <Footer/>
     </>
   )
 }
