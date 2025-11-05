@@ -5,7 +5,7 @@ import "../../styles/About.css";
 
 const AboutCards = () => {
   const cards = [
-    { icon: <LuScissors />, title: "Profesyonel Ekip", desc: "Profesyonel kadın saç kesimi ve şekillendirme" },
+    { icon: <LuScissors />, title: "Profesyonel Ekip", desc: "Profesyonel kişilerden işlemler." },
     { icon: <LuBrush />, title: "Kaliteli Ürünler", desc: "En iyi markalarla çalışıyoruz." },
     { icon: <GiLipstick />, title: "Müşteri Odaklı", desc: "Memnuniyetiniz bizim önceliğimiz" },
     { icon: <GiHairStrands />, title: "5000+ Müşteri", desc: "Binlerce mutlu müşteri" },

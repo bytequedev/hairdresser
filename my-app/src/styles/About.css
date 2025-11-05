@@ -198,19 +198,21 @@
 /* ------------- ABOUT CARDS ------------- */
 .about-cards {
   display: grid;
-  grid-template-columns: repeat(2, 0.5fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, 0.4fr); 
+  justify-content: center; 
+  gap: 25px;
   margin-top: 30px;
 }
 
 .about-card {
   background: linear-gradient(180deg, #ffffff 0%, #ffeaf5 100%);
   border-radius: 14px;
-  padding: 20px;
+  padding: 15px ;
   text-align: center;
   transition: all 0.3s ease;
   box-shadow: 0 3px 8px rgba(223, 47, 128, 0.08);
   border: 1px solid rgba(223, 47, 128, 0.12);
+  
 
 }
 
