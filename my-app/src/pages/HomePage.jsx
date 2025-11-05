@@ -5,7 +5,7 @@ import LogoSection from "../components/HomePage/LogoSection";
 
 const HomePage = () => {
   return (
-    <section className="home-page">
+    <section className="home-page" id="anasayfa">
       <div className="container-fluid py-5 px-4 px-lg-5">
         <div className="row align-items-start g-4 g-lg-5 mx-0">
             <HeroSection />

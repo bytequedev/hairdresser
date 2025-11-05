@@ -15,7 +15,7 @@ const GalleryPage = () => {
       : galleryItems.filter((item) => item.category === activeCategory);
 
   return (
-    <section className="gallery-page">
+    <section className="gallery-page" id="galeri">
       <div className="d-flex flex-column justify-content-center align-items-center">
         <div className="container-fluid text-center py-4 px-4 px-lg-5 ">
 

@@ -6,16 +6,14 @@ import "../styles/About.css";
 
 const AboutPage = () => {
   return (
-    <section className="about-section">
+    <section className="about-section" id="hakkimizda">
       <div className="container py-5 px-4 px-lg-5">
         <div className="about-layout">
-          {/* Sol taraf: Başlık + kartlar */}
           <div className="about-left">
             <Title />
             <AboutCards />
           </div>
 
-          {/* Sağ taraf: Neden Bizi Seçmelisiniz */}
           <div className="about-right">
             <WhyCard />
           </div>

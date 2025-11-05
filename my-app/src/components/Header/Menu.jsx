@@ -1,5 +1,5 @@
 import React from "react";
-import { Link as ScrollLink } from "react-scroll";
+import { Link as ScrollLink, scroller } from "react-scroll";
 import "../../styles/Header.css";
 
 const Menu = ({ active, setActive }) => {
@@ -12,20 +12,26 @@ const Menu = ({ active, setActive }) => {
     { name: "iletisim", label: "İletişim" },
   ];
 
+  const handleClick = (section) => {
+    setActive(section);
+    scroller.scrollTo(section, {
+      duration: 800,
+      delay: 0,
+      smooth: false, 
+      offset: -70,
+    });
+  };
+
   return (
     <nav className="nav-menu">
       {menuItems.map((item) => (
-        <ScrollLink
+        <span
           key={item.name}
-          to={item.name}
-          smooth={true}
-          duration={500}
-          offset={-70}
-          onClick={() => setActive(item.name)}
+          onClick={() => handleClick(item.name)}
           className={`nav-item ${active === item.name ? "active" : ""}`}
         >
           {item.label}
-        </ScrollLink>
+        </span>
       ))}
     </nav>
   );
