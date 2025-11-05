@@ -1,5 +1,5 @@
 import React from "react";
-import GalleryCard from "./galleryCard";
+import GalleryCard from "./GalleryCard";
 
 const GalleryGrid = ({ items }) => {
   if (items.length === 0) {

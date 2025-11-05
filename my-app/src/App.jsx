@@ -5,6 +5,7 @@ import GalleryPage from './pages/GalleryPage'
 import WorksPage from './pages/WorksPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+import AppointmentPage from './pages/AppointmentPage'
 function App() {
 
   return (
@@ -13,6 +14,7 @@ function App() {
   <HomePage/>
   <WorksPage/>
   <GalleryPage/>
+  <AppointmentPage/>
   <AboutPage/>
   <ContactPage/>
     </>

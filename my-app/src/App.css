@@ -4,3 +4,11 @@ html, body {
   font-family: 'Inter', sans-serif;
 }
 
+:root {
+  --color-primary: #DF2F80;
+  --color-background: #FFECF6;
+  --color-second: #FFF8FC;
+  --color-wp: #45DD4D;
+  --color-white: #ffffff;
+  --color-black: #000000;
+}

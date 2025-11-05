@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "../styles/Gallery.css";
 import { categories, galleryItems } from "../data/galleryData";
-import GalleryHeader from "../components/GalleryPage/galleryHeader";
-import CategoryButtons from "../components/GalleryPage/categoryButtons";
-import GalleryGrid from "../components/GalleryPage/galleryGrid";
+import GalleryHeader from "../components/GalleryPage/GalleryHeader";
+import CategoryButtons from "../components/GalleryPage/CategoryButtons";
+import GalleryGrid from "../components/GalleryPage/GalleryGrid";
 
 const GalleryPage = () => {
 
