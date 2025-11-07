@@ -1,4 +1,6 @@
 import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 import Header from './pages/Header'
 import HomePage from './pages/HomePage'
 import GalleryPage from './pages/GalleryPage'
@@ -7,19 +9,32 @@ import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import AppointmentPage from './pages/AppointmentPage'
 import Footer from './pages/Footer'
-function App() {
+import Menu from './adminpages/Menu'
 
+
+function App() {
   return (
-    <>
-  <Header/>
-  <HomePage/>
-  <WorksPage/>
-  <GalleryPage/>
-  <AppointmentPage/>
-  <AboutPage/>
-  <ContactPage/>
-  <Footer/>
-    </>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <HomePage />
+              <WorksPage />
+              <GalleryPage />
+              <AppointmentPage />
+              <AboutPage />
+              <ContactPage />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route path="/admin" element={<Menu />} />
+      </Routes>
+    </Router>
   )
 }
 

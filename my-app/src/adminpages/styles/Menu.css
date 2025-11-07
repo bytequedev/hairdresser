@@ -1,0 +1,60 @@
+:root {
+  --color-primary: #DF2F80;
+  --color-background: #FFECF6;
+  --color-second: #FFF8FC;
+  --color-wp: #45DD4D;
+  --color-white: #ffffff;
+  --color-black: #000000;
+}
+.bg-light-pink {
+  background-color:var(--color-background);
+}
+
+.menu-sidebar {
+  width: 250px;
+  background-color: var(--color-white);
+  border-radius: 16px;
+}
+
+.menu-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 500;
+  background-color: #ffffff;
+  color: var(--color-primary);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease;
+}
+
+.menu-btn:hover {
+  background-color: var(--color-primary);
+  transform: translateY(-1px);
+    color: var(--color-white);
+
+}
+
+.menu-btn.active {
+  background-color: #d63384;
+  color: white;
+  transform: scale(1.02);
+}
+
+.menu-content {
+  background-color: #fff;
+  border-radius: 20px;
+  min-height: 80vh;
+  overflow-y: auto;
+}
+
+.menu-container {
+  min-height: 100vh;
+}
+.app-header {
+  background-color: var(--color-white);
+  height: 80px; /* yüksekliği azaltılmış */
+  display: flex;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100; 
+  padding-top: 4px;
+}
