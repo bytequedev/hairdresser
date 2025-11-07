@@ -1,3 +1,4 @@
+
 .header {
   display: flex;
   align-items: center;
@@ -85,20 +86,38 @@
   color: #DF2F80; /* primary */
 }
 
-/* === WhatsApp Butonu === */
 .wp-button {
+  position: fixed;
+  top: 20%;
+  right: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 30px;
-  font-weight: 500;
+  justify-content: center;
+  width: 45px;            
+  height: 180px;        
+  color: white;
   text-decoration: none;
-  transition: 0.3s;
+  border-radius: 10px 0 0 10px;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
 .wp-button:hover {
-  opacity: 0.85;
-  transform: scale(1.03);
+  background-color: var(--color-wp);
+  transform: scale(1.05);
+}
+
+.wp-text {
+  writing-mode: vertical-lr; 
+  transform: rotate(180deg); 
+  font-size: 13px;           
+  font-weight: 700;          
+  margin-top: 5px;
+}
+
+.wp-icon {
+  transform: rotate(270deg);
+  margin-top: 5px;
 }

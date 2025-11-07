@@ -4,7 +4,7 @@ export const COLORS = {
   second: "#FFF8FC",        
   white: "#ffffff",   
   black: "#000000",  
-  wp:"#45DD4D"
+  wp:"#27b46a"
 };
 
 

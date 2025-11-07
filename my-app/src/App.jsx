@@ -10,11 +10,14 @@ import ContactPage from './pages/ContactPage'
 import AppointmentPage from './pages/AppointmentPage'
 import Footer from './pages/Footer'
 import Menu from './adminpages/Menu'
+import WhatsappButton from './components/Header/WhatsappButton'
 
 
 function App() {
   return (
     <Router>
+      <WhatsappButton />
+
       <Routes>
         <Route
           path="/"
@@ -31,7 +34,6 @@ function App() {
             </>
           }
         />
-
         <Route path="/admin" element={<Menu />} />
       </Routes>
     </Router>

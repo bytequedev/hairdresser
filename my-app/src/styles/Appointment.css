@@ -96,7 +96,7 @@
   border: none;
   transition: all 0.3s ease;
       border-radius:8px;
-
+background-color: var(--color-wp);
 }
 
 .btn-success:hover {
