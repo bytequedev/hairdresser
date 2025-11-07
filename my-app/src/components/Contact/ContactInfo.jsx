@@ -35,7 +35,7 @@ const ContactInfo = () => {
         <FaClock className="info-icon" />
         <div>
           <strong>Çalışma Saatleri</strong>
-          <p>Çarşamba - Pazar: 09:00 - 20:00 <br /> Salı: Kapalı</p>
+          <p>Haftaiçi - Haftsonu: 09:00 - 20:00 <br /> Salı: Kapalı</p>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ import "../styles/About.css";
 const AboutPage = () => {
   return (
     <section className="about-section" id="hakkimizda">
-      <div className="container py-5 px-4 px-lg-5">
+      <div className="container py-5  ">
         <div className="about-layout">
           <div className="about-left">
             <Title />

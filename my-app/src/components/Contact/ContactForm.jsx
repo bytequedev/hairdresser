@@ -1,5 +1,5 @@
 import React from "react";
-import { IoSend } from "react-icons/io5"; // gönderme ikonu
+import { IoSend } from "react-icons/io5"; 
 
 const ContactForm = () => {
   return (
@@ -15,7 +15,9 @@ const ContactForm = () => {
         </div>
         <div className="mb-3">
           <label className="form-label">Telefon</label>
-          <input type="tel" className="form-control custom-input" placeholder="05xx xxx xx xx" />
+          <input type="tel" className="form-control custom-input"   placeholder="(0___) ___ __ __"   maxlength="11" 
+  pattern="0[0-9\s]{10,12}" 
+ />
         </div>
         <div className="mb-3">
           <label className="form-label">Mesajınız</label>

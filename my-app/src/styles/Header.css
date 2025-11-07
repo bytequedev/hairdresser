@@ -1,4 +1,3 @@
-/* === Genel Header Yapısı === */
 .header {
   display: flex;
   align-items: center;
@@ -10,7 +9,6 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
-/* === Logo Alanı (Görsel + Metin) === */
 .logo-container {
   display: flex;
   align-items: center;
@@ -39,11 +37,10 @@
   color: #7a7979;
   margin: 0;
 }
-/* === Menü === */
 .nav-menu-wrapper {
-  flex: 1; /* ortalama alanı kapsar */
+  flex: 1; 
   display: flex;
-  justify-content: center; /* menüyü ortala */
+  justify-content:end
 }
 
 /* Menü öğeleri */

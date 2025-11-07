@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import WorksCard from "./WorksCard";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { LuScissors, LuBrush } from "react-icons/lu";
@@ -19,20 +19,34 @@ const data = [
 const WorksList = () => {
   const scrollRef = useRef(null);
 
- const scrollRight = () => scrollRef.current.scrollBy({ left: 260, behavior: "smooth" });
-const scrollLeft = () => scrollRef.current.scrollBy({ left: -260, behavior: "smooth" });
+  const scrollRight = () => scrollRef.current.scrollBy({ left: 260, behavior: "smooth" });
+  const scrollLeft = () => scrollRef.current.scrollBy({ left: -260, behavior: "smooth" });
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+
+        if (scrollLeft + clientWidth >= scrollWidth) {
+          scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          scrollRef.current.scrollBy({ left: 1, behavior: "smooth" }); 
+        }
+      }
+    }, 20); 
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="position-relative py-4">
-     <div className="d-flex overflow-auto works-scroll" ref={scrollRef}>
-  <div className="works-row">
-    {data.map((item, index) => (
-      <WorksCard key={index} icon={item.icon} title={item.title} desc={item.desc} />
-    ))}
-  </div>
-</div>
-
+      <div className="d-flex overflow-auto works-scroll" ref={scrollRef}>
+        <div className="works-row">
+          {data.map((item, index) => (
+            <WorksCard key={index} icon={item.icon} title={item.title} desc={item.desc} />
+          ))}
+        </div>
+      </div>
 
       <button className="arrow-btn left" onClick={scrollLeft}>
         <FiChevronLeft size={22} />

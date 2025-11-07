@@ -5,10 +5,10 @@ import "../../styles/Header.css";
 const Menu = ({ active, setActive }) => {
   const menuItems = [
     { name: "anasayfa", label: "Anasayfa" },
-    { name: "hizmetler", label: "Hizmetler" },
-    { name: "hakkimizda", label: "Hakkımızda" },
-    { name: "galeri", label: "Galeri" },
+    { name: "hizmetler", label: "Hizmetlerimiz" },
+    { name: "galeri", label: "Çalışmalarımız" },
     { name: "randevu", label: "Randevu" },
+    { name: "hakkimizda", label: "Hakkımızda" },
     { name: "iletisim", label: "İletişim" },
   ];
 

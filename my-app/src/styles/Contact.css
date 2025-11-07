@@ -18,7 +18,8 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 .contact-form-box{
-      background-color: var(--color-background);
+      background-color: var(--color-white);
+      border: 1px solid var(--color-primary);
 
 }
 
@@ -102,8 +103,10 @@
 }
 
 .send-btn:hover {
-  background-color: #c6286e;
-}
+  background: linear-gradient(45deg, #DF2F80, #ff4fa0, #DF2F80);
+  background-size: 200% 200%;
+  animation: shine 1s ease forwards;
+  color: var(--color-white);}
 
 /* Responsive */
 @media (max-width: 991px) {
@@ -116,10 +119,9 @@
 
 .contact-row { gap: 60px; }
 
-/* Form input görünümü */
 .form-input {
   height: 46px;
-  border: 1.5px solid #ddd;
+  border: 2px solid rgb(241, 241, 241) !important;
   border-radius: 8px;
   padding: 10px 14px;
   transition: all 0.3s ease;
@@ -139,7 +141,7 @@ textarea.form-input {
 
 
 .custom-input {
-  border: 1px solid  var(--color-primary);
+  border: 2px solid  var(--color-primary);
   border-radius: 10px;
   padding: 10px 12px;
   transition: all 0.25s ease;
@@ -176,4 +178,9 @@ textarea.form-input {
 .contact-social-box p {
   font-size: 0.9rem;
   margin-bottom: 10px;
+}
+
+
+.form-label{
+  font-weight: bold;
 }
