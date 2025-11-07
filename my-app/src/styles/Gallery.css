@@ -61,7 +61,7 @@
 }
 
 .gallery-item {
-  height: 250px;
+  height: clamp(120px, 25vw, 200px);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 2px solid var(--color-white);

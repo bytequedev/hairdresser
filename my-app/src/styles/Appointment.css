@@ -40,20 +40,21 @@
 
 /* Çoklu seçimde etiket (seçilen hizmet balonları) */
 .react-select__multi-value {
-  background-color: var(--color-primary) !important;
+  background-color: #f2f2f2  !important;
+  border: 2px solid #f2f2f2;
 }
 
 .react-select__multi-value__label {
-  color: var(--color-white) !important;
+  color: var(--color-black) !important;
 }
 
 .react-select__multi-value__remove {
-  color: var(--color-white) !important;
+  color: var(--color-black) !important;
 }
 
 .react-select__multi-value__remove:hover {
   background-color: var(--color-secondary) !important;
-  color: var(--color-white) !important;
+  color: var(--color-black) !important;
 }
 
 /* Açılır menü */

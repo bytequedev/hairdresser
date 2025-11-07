@@ -33,7 +33,7 @@ const AppointmentForm = () => {
               <input
                 type="tel"
                 className="form-control"
-                placeholder="05xx xxx xxxx"
+                placeholder="(0___) ___ __ __"
                 pattern="[0-9]{11}"
                 maxlength="11"
                 onInput={(e) =>

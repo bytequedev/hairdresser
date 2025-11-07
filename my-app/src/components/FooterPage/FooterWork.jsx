@@ -5,7 +5,7 @@ const FooterWork = () => {
   return (
     <div className="col-12 col-sm-6 col-md-3 mb-4">
       <h6 className="fw-bold text-color">Çalışma Saatleri</h6>
-      <p className="mt-3 small mb-2">Çarşamba - Pazartesi:
+      <p className="mt-3 small mb-2">Haftaiçi - Haftasonu:
         <span className="fw-semibold"> 09:00 - 20:00</span>
       </p>
       <p className="small">Salı: 

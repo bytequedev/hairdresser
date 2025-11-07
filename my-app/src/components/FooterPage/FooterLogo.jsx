@@ -7,7 +7,7 @@ const FooterLogo = () => {
     <div className="col-12 col-sm-6 col-md-3 mb-4">
       <div className="d-flex align-items-center mb-3">
         <img
-          src="/assets/seffaflogo.png"
+          src="/assets/eliflogo.png"
           alt="logo"
           className="img-fluid"
           style={{ width: "200px", height: "auto", borderRadius: "50%" }}
