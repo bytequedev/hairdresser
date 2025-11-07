@@ -4,7 +4,6 @@ import { IoSend } from "react-icons/io5"; // gönderme ikonu
 const ContactForm = () => {
   return (
     <div className="contact-form-box p-4 shadow-sm rounded-4">
-      <h5 className="fw-bold mb-3">Bize Mesaj Gönderin</h5>
       <form>
         <div className="mb-3">
           <label className="form-label">Ad Soyad</label>

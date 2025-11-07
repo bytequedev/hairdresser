@@ -1,7 +1,8 @@
 .form-card {
-  background-color: var(--color-background);
-  border-radius: 24px;
+  background-color: var(--color-white);
+  border-radius: 16px;
   transition: all 0.3s ease;
+  border: 1px solid var(--color-primary);
 }
 
 .form-card:hover {
@@ -14,13 +15,14 @@
 }
 
 .form-control {
-  border: 2px solid var(--color-primary) !important;
+  border: 2px solid rgb(241, 241, 241) !important;
   transition: all 0.3s ease;
+  border-radius:12px;
 }
 
 .form-control:focus {
   border-color: var(--color-primary) !important;
-  box-shadow: 0 0 15px rgba(223, 47, 128, 0.4), 0 0 30px rgba(223, 47, 128, 0.2) !important;
+  box-shadow: none !important;
   outline: none !important;
   transform: scale(1.01);
 }
@@ -32,7 +34,7 @@
 
 .react-select__control--is-focused {
   border-color: var(--color-primary) !important;
-  box-shadow: 0 0 15px rgba(223, 47, 128, 0.4), 0 0 30px rgba(223, 47, 128, 0.2) !important;
+  box-shadow: none !important;
   transform: scale(1.01);
 }
 
@@ -70,6 +72,7 @@
     color: var(--color-white);
     border: none;
     transition: all 0.3s ease;
+    border-radius:8px;
 }
 
 .btn-custom-primary:hover {
@@ -91,6 +94,8 @@
 .btn-success {
   border: none;
   transition: all 0.3s ease;
+      border-radius:8px;
+
 }
 
 .btn-success:hover {
