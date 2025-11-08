@@ -1,6 +1,5 @@
 import './App.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
+import { BrowserRouter as Router, Routes, Route,useLocation  } from 'react-router-dom'
 import Header from './pages/Header'
 import HomePage from './pages/HomePage'
 import GalleryPage from './pages/GalleryPage'
@@ -13,10 +12,13 @@ import Menu from './adminpages/Menu'
 import WhatsappButton from './components/Header/WhatsappButton'
 
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const showWhatsapp = location.pathname !== '/admin';
+
   return (
-    <Router>
-      <WhatsappButton />
+    <>
+      {showWhatsapp && <WhatsappButton />}
 
       <Routes>
         <Route
@@ -36,6 +38,14 @@ function App() {
         />
         <Route path="/admin" element={<Menu />} />
       </Routes>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   )
 }

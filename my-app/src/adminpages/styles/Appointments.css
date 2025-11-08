@@ -3,7 +3,7 @@
   transition: 0.2s ease;
 }
 
-.appointment-form,.appointment-card {
+.admin-form,.admin-card {
   border: 1px solid #e0e0e0; 
   border-radius: 8px; 
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -13,7 +13,7 @@
   margin-bottom: 12px;
 }
 
-.appointment-form:hover,.appointment-card:hover {
+.admin-form:hover,.admin-card:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }

@@ -1,12 +1,10 @@
 import React from "react";
 import { Row, Col, Badge } from "react-bootstrap";
 
-const AdminAppointmentsGrid = ({ appointments }) => {
+const AdminMessagesGrid = ({ messages }) => {
   const statusConfig = {
-    Bekleyen: { bg: "warning", text: "Bekliyor" },
-    Onaylı: { bg: "success", text: "Onaylı" },
-    Tamamlandı: { bg: "primary", text: "Tamamlandı" },
-    İptal: { bg: "danger", text: "İptal" },
+    Yeni: { bg: "warning", text: "Yeni" },
+    Okundu: { bg: "success", text: "Okundu" },
   };
 
   const getStatusBadge = (status) => {
@@ -18,7 +16,7 @@ const AdminAppointmentsGrid = ({ appointments }) => {
     );
   };
 
-  const AppointmentCard = ({ item }) => (
+  const MessagesCard = ({ item }) => (
     <div className="admin-card">
       <div className="card-header-row">
         <div className="card-name">{item.name}</div>
@@ -27,9 +25,9 @@ const AdminAppointmentsGrid = ({ appointments }) => {
 
       <Row className="g-3">
         <InfoField label="Telefon" value={item.phone} />
-        <InfoField label="Hizmet" value={item.service} />
-        <InfoField label="Tarih" value={item.date} />
-        <InfoField label="Saat" value={item.time} />
+        <InfoField label="E-mail" value={item.email} />
+        <InfoField label="Mesaj" value={item.note} />
+        <InfoField label="Gönderilme Tarihi" value={item.current_date} />
         <Col xs={12}>
           <div className="card-label">Durum</div>
           <div>{getStatusBadge(item.status)}</div>
@@ -46,42 +44,42 @@ const AdminAppointmentsGrid = ({ appointments }) => {
   );
 
   const EmptyState = () => (
-    <div className="text-center text-muted py-4">Hiç randevu bulunamadı.</div>
+    <div className="text-center text-muted py-4">Gösterilecek mesaj yok.</div>
   );
 
   return (
-    <div className="appointment-container">
+    <div className="messages-container">
       <div className="admin-form d-none d-md-block">
         <Row className="fw-semibold text-secondary border-bottom pb-2 mb-2 flex-nowrap">
-          <Col style={{ flex: 2.5 }} className="text-start">
-            Müşteri
+          <Col style={{ flex: 2 }} className="text-start">
+            Kişi Adı
           </Col>
           <Col style={{ flex: 2 }}>Numara</Col>
-          <Col style={{ flex: 2 }}>Hizmet</Col>
-          <Col style={{ flex: 1.5 }}>Tarih</Col>
-          <Col style={{ flex: 1 }}>Saat</Col>
+          <Col style={{ flex: 2 }}>E-mail</Col>
+          <Col style={{ flex: 2.5 }}>Mesaj</Col>
+          <Col style={{ flex: 2 }}>Tarih</Col>
           <Col style={{ flex: 1 }}>Durum</Col>
           <Col style={{ flex: 0.8 }} className="text-end">
             İşlem
           </Col>
         </Row>
 
-        {appointments.length > 0 ? (
-          appointments.map((item) => (
+        {messages.length > 0 ? (
+          messages.map((item) => (
             <Row
               key={item.id}
               className="align-items-center border-bottom py-2 hover-bg-light flex-nowrap"
             >
               <Col
-                style={{ flex: 2.5 }}
+                style={{ flex: 2 }}
                 className="fw-semibold text-dark text-start"
               >
                 {item.name}
               </Col>
               <Col style={{ flex: 2 }}>{item.phone}</Col>
-              <Col style={{ flex: 2 }}>{item.service}</Col>
-              <Col style={{ flex: 1.5 }}>{item.date}</Col>
-              <Col style={{ flex: 1 }}>{item.time}</Col>
+              <Col style={{ flex: 2 }}>{item.email}</Col>
+              <Col style={{ flex: 2.5 }}>{item.note}</Col>
+              <Col style={{ flex: 2 }}>{item.current_date}</Col>
               <Col style={{ flex: 1 }}>{getStatusBadge(item.status)}</Col>
               <Col style={{ flex: 0.8 }} className="text-end">
                 <i
@@ -98,9 +96,9 @@ const AdminAppointmentsGrid = ({ appointments }) => {
       </div>
 
       <div className="d-md-none">
-        {appointments.length > 0 ? (
-          appointments.map((item) => (
-            <AppointmentCard key={item.id} item={item} />
+        {messages.length > 0 ? (
+          messages.map((item) => (
+            <MessagesCard key={item.id} item={item} />
           ))
         ) : (
           <EmptyState />
@@ -110,4 +108,4 @@ const AdminAppointmentsGrid = ({ appointments }) => {
   );
 };
 
-export default AdminAppointmentsGrid;
+export default AdminMessagesGrid;
