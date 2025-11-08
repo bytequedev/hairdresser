@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col, Badge } from "react-bootstrap";
+import AppointmensModal from "./AppointmentsModal";
 
-const AdminAppointmentsGrid = ({ appointments }) => {
+const AdminAppointmentsGrid = ({ appointments, onUpdateStatus }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedMessage, setSelectedMessage] = useState(null);
+
   const statusConfig = {
     Bekleyen: { bg: "warning", text: "Bekliyor" },
     Onaylı: { bg: "success", text: "Onaylı" },
@@ -18,11 +22,42 @@ const AdminAppointmentsGrid = ({ appointments }) => {
     );
   };
 
+  const handleOpenModal = (item) => {
+    setSelectedMessage(item);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedMessage(null);
+    setShowModal(false);
+  };
+
+  const handleApprove = (id) => {
+    onUpdateStatus(id, "Onaylı");
+  };
+
+  const handleReject = (id) => {
+    onUpdateStatus(id, "İptal");
+  };
+
+  const handleComplete = (id) => {
+    onUpdateStatus(id, "Tamamlandı");
+  };
+
+  const handleCancel = (id) => {
+    onUpdateStatus(id, "İptal");
+  };
+
   const AppointmentCard = ({ item }) => (
     <div className="admin-card">
       <div className="card-header-row">
         <div className="card-name">{item.name}</div>
-        <i className="fa-solid fa-eye eye-icon" title="Detay" />
+        <i 
+          className="fa-solid fa-eye eye-icon" 
+          title="Detay" 
+          style={{ cursor: "pointer" }} 
+          onClick={() => handleOpenModal(item)} 
+        />
       </div>
 
       <Row className="g-3">
@@ -88,6 +123,7 @@ const AdminAppointmentsGrid = ({ appointments }) => {
                   className="fa-solid fa-eye text-primary"
                   style={{ cursor: "pointer", fontSize: "1rem" }}
                   title="Detay"
+                  onClick={() => handleOpenModal(item)}
                 />
               </Col>
             </Row>
@@ -106,6 +142,17 @@ const AdminAppointmentsGrid = ({ appointments }) => {
           <EmptyState />
         )}
       </div>
+
+      <AppointmensModal
+        show={showModal}
+        onClose={handleCloseModal}
+        message={selectedMessage}
+        getStatusBadge={getStatusBadge}
+        onApprove={handleApprove}
+        onReject={handleReject}
+        onComplete={handleComplete}
+        onCancel={handleCancel}
+      />
     </div>
   );
 };

@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col, Badge } from "react-bootstrap";
+import MessageModal from "./MessageModal";
 
 const AdminMessagesGrid = ({ messages }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedMessage, setSelectedMessage] = useState(null);
+
   const statusConfig = {
     Yeni: { bg: "warning", text: "Yeni" },
     Okundu: { bg: "success", text: "Okundu" },
@@ -16,11 +20,26 @@ const AdminMessagesGrid = ({ messages }) => {
     );
   };
 
+  const handleOpenModal = (item) => {
+    setSelectedMessage(item);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedMessage(null);
+    setShowModal(false);
+  };
+
   const MessagesCard = ({ item }) => (
     <div className="admin-card">
       <div className="card-header-row">
         <div className="card-name">{item.name}</div>
-        <i className="fa-solid fa-eye eye-icon" title="Detay" />
+        <i
+          className="fa-solid fa-eye eye-icon"
+          title="Detay"
+          style={{ cursor: "pointer" }}
+          onClick={() => handleOpenModal(item)}
+        />
       </div>
 
       <Row className="g-3">
@@ -86,6 +105,7 @@ const AdminMessagesGrid = ({ messages }) => {
                   className="fa-solid fa-eye text-primary"
                   style={{ cursor: "pointer", fontSize: "1rem" }}
                   title="Detay"
+                  onClick={() => handleOpenModal(item)}
                 />
               </Col>
             </Row>
@@ -97,13 +117,17 @@ const AdminMessagesGrid = ({ messages }) => {
 
       <div className="d-md-none">
         {messages.length > 0 ? (
-          messages.map((item) => (
-            <MessagesCard key={item.id} item={item} />
-          ))
+          messages.map((item) => <MessagesCard key={item.id} item={item} />)
         ) : (
           <EmptyState />
         )}
       </div>
+      <MessageModal
+        show={showModal}
+        onClose={handleCloseModal}
+        message={selectedMessage}
+        getStatusBadge={getStatusBadge}
+      />
     </div>
   );
 };
