@@ -45,7 +45,6 @@ const Menu = () => {
     <div className="menu-wrapper bg-light-pink">
       <Header />
 
-      {/* Hamburger Button - Sadece mobilde görünür */}
       <button
         className="hamburger-btn"
         onClick={toggleMobileMenu}
@@ -59,7 +58,6 @@ const Menu = () => {
         </span>
       </button>
 
-      {/* Overlay - Mobilde menü açıkken arka plan */}
       {isMobileMenuOpen && (
         <div
           className="menu-overlay"
@@ -68,7 +66,6 @@ const Menu = () => {
       )}
 
       <div className="menu-body d-flex">
-        {/* Sidebar */}
         <div className={`menu-sidebar shadow-sm rounded-4 p-4 m-4 bg-white-70 ${isMobileMenuOpen ? "mobile-open" : ""}`}>
           <div className="d-flex flex-column gap-3 mt-4">
             {menuItems.map((item) => (
@@ -83,7 +80,6 @@ const Menu = () => {
           </div>
         </div>
 
-        {/* Content */}
         <div className="menu-content flex-fill m-4 p-4 bg-white rounded-4 shadow-sm">
           {renderContent()}
         </div>

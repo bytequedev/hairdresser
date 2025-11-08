@@ -1,0 +1,97 @@
+:root {
+  --primary: #DF2F80;
+  --background: #FFECF6;
+  --second: #FFF8FC;
+  --white: #ffffff;
+  --black: #000000;
+  --wp: #27b46a;
+}
+
+.dashboard-card {
+  background-color: var(--white);
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 130px;
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.icon-wrapper {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.custom-dropdown .btn {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.custom-dropdown .btn:hover {
+  background-color: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.custom-dropdown .dropdown-menu {
+  border-radius: 8px;
+}
+
+
+
+.date-picker-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 4px 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid var(--primary);
+  gap: 10px;
+  width: fit-content;
+
+}
+
+.date-icon {
+  color: var(--primary);
+  font-size: 0.95rem;
+}
+
+.date-value {
+  font-weight: 500;
+  font-size: 0.90rem;
+  color: var(--primary);
+
+}
+
+.date-arrow {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-left: 4px;
+}
+
+.appointment-card {
+  border-radius: 14px;
+ height: 220px;
+  border: 1px solid #f0f0f0;
+}
+
+.summary-card {
+  border-radius: 14px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+
+.no-hover:hover {
+  transform: none !important;
+}
