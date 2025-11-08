@@ -8,6 +8,23 @@ import "./styles/Menu.css";
 
 const Menu = () => {
   const [active, setActive] = useState("dashboard");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const menuItems = [
+    { id: "dashboard", label: "Dashboard" },
+    { id: "randevular", label: "Randevular" },
+    { id: "mesajlar", label: "Gelen Mesajlar" },
+    { id: "galeri", label: "Galeri" }
+  ];
+
+  const handleMenuClick = (itemId) => {
+    setActive(itemId);
+    setIsMobileMenuOpen(false); // Mobilde seçim yapınca menü kapansın
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   const renderContent = () => {
     switch (active) {
@@ -28,36 +45,45 @@ const Menu = () => {
     <div className="menu-wrapper bg-light-pink">
       <Header />
 
+      {/* Hamburger Button - Sadece mobilde görünür */}
+      <button
+        className="hamburger-btn"
+        onClick={toggleMobileMenu}
+        aria-label="Toggle menu"
+        aria-expanded={isMobileMenuOpen}
+      >
+        <span className={`hamburger-icon ${isMobileMenuOpen ? "open" : ""}`}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+      {/* Overlay - Mobilde menü açıkken arka plan */}
+      {isMobileMenuOpen && (
+        <div
+          className="menu-overlay"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
       <div className="menu-body d-flex">
-        <div className="menu-sidebar shadow-sm rounded-4 p-4 m-4 bg-white-70">
+        {/* Sidebar */}
+        <div className={`menu-sidebar shadow-sm rounded-4 p-4 m-4 bg-white-70 ${isMobileMenuOpen ? "mobile-open" : ""}`}>
           <div className="d-flex flex-column gap-3 mt-4">
-            <button
-              onClick={() => setActive("dashboard")}
-              className={`menu-btn ${active === "dashboard" ? "active" : ""}`}
-            >
-              Dashboard
-            </button>
-            <button
-              onClick={() => setActive("randevular")}
-              className={`menu-btn ${active === "randevular" ? "active" : ""}`}
-            >
-              Randevular
-            </button>
-            <button
-              onClick={() => setActive("mesajlar")}
-              className={`menu-btn ${active === "mesajlar" ? "active" : ""}`}
-            >
-              Gelen Mesajlar
-            </button>
-            <button
-              onClick={() => setActive("galeri")}
-              className={`menu-btn ${active === "galeri" ? "active" : ""}`}
-            >
-              Galeri
-            </button>
+            {menuItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleMenuClick(item.id)}
+                className={`menu-btn ${active === item.id ? "active" : ""}`}
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
         </div>
 
+        {/* Content */}
         <div className="menu-content flex-fill m-4 p-4 bg-white rounded-4 shadow-sm">
           {renderContent()}
         </div>

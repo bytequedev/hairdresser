@@ -1,0 +1,100 @@
+.hover-bg-light:hover {
+  background-color: #f8f9fa;
+  transition: 0.2s ease;
+}
+
+.appointment-form,.appointment-card {
+  border: 1px solid #e0e0e0; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  background-color: var(--color-white);
+  padding: 16px;
+  transition: box-shadow 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.appointment-form:hover,.appointment-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.status-badge {
+  display: inline-block;
+  width: 100px;           
+  text-align: center;     
+  font-weight: 500;
+  padding: 0.4em 0;       
+  font-size: 0.9rem;    
+  border-radius: 8px;  
+}
+
+.custom-btn-primary {
+  background-color: var(--color-primary); 
+  color: var(--color-white);
+  border: none;
+  box-shadow: 0 2px 6px rgba(223, 47, 128, 0.3);
+  transition: all 0.3s ease;
+  border-radius: 16px;
+}
+
+.custom-btn-primary:hover {
+  background-color: #c62872;
+  color: var(--color-white);
+  box-shadow: 0 4px 10px rgba(223, 47, 128, 0.45);
+}
+
+.custom-btn-outline {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  box-shadow: 0 2px 6px rgba(223, 47, 128, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 16px;
+}
+
+.custom-btn-outline:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  box-shadow: 0 4px 10px rgba(223, 47, 128, 0.25);
+}
+
+.card-label {
+  font-weight: 600;
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.card-value {
+  color: #212529;
+  font-size: 0.95rem;
+}
+
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.card-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #212529;
+}
+
+.eye-icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #0d6efd;
+}
+
+@media (max-width: 768px) {
+  .status-badge {
+    width: auto;
+    min-width: 80px;
+  }
+}
+
