@@ -72,8 +72,8 @@ const AppointmentsPages = () => {
   console.log('Filtered Appointments:', filteredAppointments); 
   
   return (
-    <section className="adminappointment-page">
-      <div className="container-fluid py-3">
+    <section className="adminappointment-page" >
+      <div className="container">
         <div className="row">
           <AdminAppointmentsHeader/>
           <AdminCategoryButtons
