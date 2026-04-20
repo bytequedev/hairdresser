@@ -3,13 +3,13 @@ import WorksList from "../components/Works/WorksList";
 import "../styles/Works.css";
 
 
-const WorksPage = () => {
+const WorksPage = ({ setGalleryCategory }) => {
   return (
     <section  id="hizmetler">
       <div className="container-fluid py-5 px-4 px-lg-5">
         <Title/>
         <div className="row align-items-start g-4 g-lg-5 mx-0">
-            <WorksList/>
+            <WorksList setGalleryCategory={setGalleryCategory} />
         </div>
       </div>
     </section>

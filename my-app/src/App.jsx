@@ -24,6 +24,7 @@ function AppContent() {
   const location = useLocation();
   const showWhatsapp = location.pathname !== '/admin';
   const [adminLogged, setAdminLogged] = useState(false);
+  const [galleryCategory, setGalleryCategory] = useState("Tümü");
 
   useEffect(() => {
     const isAdmin = localStorage.getItem("isAdmin") === "true";
@@ -41,9 +42,14 @@ function AppContent() {
             <>
               <Header />
               <HomePage />
-              <WorksPage />
-              <GalleryPage />
+              <GalleryPage 
+                activeCategory={galleryCategory} 
+                setActiveCategory={setGalleryCategory} 
+              />
               <AppointmentPage />
+              <WorksPage 
+                setGalleryCategory={setGalleryCategory} 
+              />
               <AboutPage />
               <ContactPage />
               <Footer />

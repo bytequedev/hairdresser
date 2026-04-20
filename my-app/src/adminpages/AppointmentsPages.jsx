@@ -1,66 +1,46 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import AdminAppointmentsHeader from './components/Appointmens/AdminAppointmentsHeader'
 import AdminCategoryButtons from './components/Appointmens/AdminCategoryButtons'
 import AdminAppointmentsGrid from './components/Appointmens/AdminAppointmentsGrid';
+import { db } from "../config/firebase";
+import { collection, onSnapshot, query, orderBy, doc, updateDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
 import "../adminpages/styles/Appointments.css"
 
 const AppointmentsPages = () => {
   const [activeCategory, setActiveCategory] = useState("Tümü");
   const categories = ["Tümü", "Bekleyen", "Onaylı", "Tamamlandı", "İptal"];
-  
-  const [appointments, setAppointments] = useState([
-    {
-      id: 1,
-      name: "Başak Köseoğlu",
-      phone: "05xx xxx xxxx",
-      service: "Saç Kesim",
-      date: "19.11.2025",
-      time: "14.00",
-      status: "Bekleyen",
-      note: "Saçımıda boytmak istiyorum."
-    },
-    {
-      id: 2,
-      name: "Burçin Güngör",
-      phone: "05xx xxx xxxx",
-      service: "Cilt Bakımı",
-      date: "20.11.2025",
-      time: "16.00",
-      status: "Onaylı",
-      note: "Hassas cildim var."
-    },
-    {
-      id: 3,
-      name: "Zeynep İmzaoğlu",
-      phone: "05xx xxx xxxx",
-      service: "Saç Boyama",
-      date: "21.11.2025",
-      time: "13.00",
-      status: "İptal",
-    },
-    {
-      id: 4,
-      name: "Rabia Yulalı",
-      phone: "05xx xxx xxxx",
-      service: "Kişisel Bakım",
-      date: "21.11.2025",
-      time: "13.30",
-      status: "Tamamlandı",
-      note: "Ağda yaptırmak istiyorum tüm vücut."
-    },
-  ]);
+  const [appointments, setAppointments] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const handleUpdateStatus = (id, newStatus) => {
-    console.log('Durum güncelleniyor:', id, newStatus); 
-    setAppointments(prevAppointments => {
-      const updated = prevAppointments.map(appointment =>
-        appointment.id === id
-          ? { ...appointment, status: newStatus }
-          : appointment
-      );
-      console.log('Güncellenmiş randevular:', updated); 
-      return updated;
+  useEffect(() => {
+    const q = query(collection(db, "appointments"), orderBy("createdAt", "desc"));
+    
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const appointmentsData = [];
+      querySnapshot.forEach((doc) => {
+        appointmentsData.push({ id: doc.id, ...doc.data() });
+      });
+      setAppointments(appointmentsData);
+      setLoading(false);
+    }, (error) => {
+      console.error("Randevular çekilirken hata:", error);
+      toast.error("Randevular yüklenemedi.");
+      setLoading(false);
     });
+
+    return () => unsubscribe();
+  }, []);
+
+  const handleUpdateStatus = async (id, newStatus) => {
+    try {
+      const appointmentRef = doc(db, "appointments", id);
+      await updateDoc(appointmentRef, { status: newStatus });
+      toast.success(`Durum güncellendi: ${newStatus}`);
+    } catch (error) {
+      console.error("Durum güncellenirken hata:", error);
+      toast.error("Durum güncellenemedi.");
+    }
   };
 
   const filteredAppointments =
@@ -68,30 +48,33 @@ const AppointmentsPages = () => {
       ? appointments
       : appointments.filter((item) => item.status === activeCategory);
   
-  console.log('Active Category:', activeCategory); 
-  console.log('Filtered Appointments:', filteredAppointments); 
-  
   return (
-               <div style={{ height: '74vh', display: 'flex', flexDirection: 'column' }}>
-
-    <section className="adminappointment-page" >
-      <div className="container">
-        <div className="row">
-          <AdminAppointmentsHeader/>
-          <AdminCategoryButtons
-            categories={categories}
-            activeCategory={activeCategory}
-            setActiveCategory={setActiveCategory}
-          />
-          <AdminAppointmentsGrid 
-            appointments={filteredAppointments}
-            onUpdateStatus={handleUpdateStatus}
-          />
-        </div>
-      </div>
-    </section>
+    <div style={{ height: '74vh', display: 'flex', flexDirection: 'column' }}>
+      <section className="adminappointment-page" >
+        <div className="container">
+          <div className="row">
+            <AdminAppointmentsHeader/>
+            <AdminCategoryButtons
+              categories={categories}
+              activeCategory={activeCategory}
+              setActiveCategory={setActiveCategory}
+            />
+            {loading ? (
+              <div className="text-center py-5">
+                <div className="spinner-border text-primary" role="status">
+                  <span className="visually-hidden">Yükleniyor...</span>
+                </div>
+              </div>
+            ) : (
+              <AdminAppointmentsGrid 
+                appointments={filteredAppointments}
+                onUpdateStatus={handleUpdateStatus}
+              />
+            )}
           </div>
-
+        </div>
+      </section>
+    </div>
   )
 }
 

@@ -14,56 +14,63 @@
 }
 
 
-/* Kart yapısı - responsive genişlik */
+/* Kart yapısı - Daha küçük ve zarif */
 .works-card {
-  width: clamp(200px, 30vw, 380px);
-  height: clamp(250px, 25vh, 280px);
-  border-radius: 14px;
-  padding:30px;
-  background: linear-gradient(to right, rgba(255,255,255,1) 10%, rgba(255,236,246,1) 80%);
+  width: 220px;
+  height: 200px;
+  border-radius: 12px;
+  padding: 20px;
+  background: white;
   color: #000;
-  border: 1px solid #f8ddea;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
   flex-shrink: 0;
-  transition: 0.3s ease;
-}
-
-.works-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(223, 47, 128, 0.12);
-}
-
-/* Icon alanı - responsive */
-.icon-box {
-  width: clamp(36px, 4vw, 48px);
-  height: clamp(36px, 4vw, 48px);
-  background: var(--color-primary);
-  color: #fff;
-  font-size: clamp(18px, 2vw, 24px);
-  border-radius: 10px;
+  transition: all 0.3s ease;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: center;
 }
 
+.works-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(223, 47, 128, 0.08);
+  border-color: #f8ddea;
+}
+
+/* Icon alanı - Daha küçük */
+.icon-box {
+  width: 40px;
+  height: 40px;
+  background: #fff5fa;
+  color: var(--primary);
+  font-size: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  border: 1px solid #f8ddea;
+}
+
 .card-title {
-  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
-  font-weight: 600;
-  margin-top: clamp(8px, 1vw, 14px);
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  color: #333;
 }
 
 .card-desc {
-  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
-  opacity: 0.85;
-  margin-top: clamp(4px, 0.5vw, 6px);
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 8px;
   line-height: 1.4;
+  color: #666;
 }
 
 .line {
-  width: clamp(35px, 5vw, 50px);
-  height: 2px;
-  background: var(--color-primary);
-  margin-top: clamp(10px, 1.5vw, 16px);
+  display: none; /* Daha sade görünüm için çizgiyi kaldırıyoruz */
 }
 
 /* Arrow Buttons */
@@ -99,24 +106,34 @@
   right: -18px;
 }
 
-/* Tablet ve altı - scroll aktif */
+/* Tablet ve altı */
 @media (max-width: 768px) {
   .works-card {
-    width: clamp(240px, 70vw, 320px);
+    width: 200px;
+    height: 180px;
+    padding: 15px;
   }
   
   .arrow-btn.left {
-    left: -12px;
+    left: -8px;
   }
   
   .arrow-btn.right {
-    right: -12px;
+    right: -8px;
   }
 }
 
 /* Mobile */
 @media (max-width: 576px) {
   .works-card {
-    width: clamp(220px, 75vw, 280px);
+    width: 180px;
+    height: 160px;
+    padding: 12px;
+  }
+  .card-title {
+    font-size: 14px;
+  }
+  .card-desc {
+    font-size: 11px;
   }
 }

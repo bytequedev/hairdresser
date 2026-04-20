@@ -1,4 +1,3 @@
-
 .header {
   display: flex;
   align-items: center;
@@ -38,10 +37,11 @@
   color: #7a7979;
   margin: 0;
 }
+
 .nav-menu-wrapper {
-  flex: 1; 
+  flex: 1;
   display: flex;
-  justify-content:end
+  justify-content: end
 }
 
 /* Menü öğeleri */
@@ -55,7 +55,7 @@
     display: flex !important;
     flex-direction: column;
     gap: 15px;
-    
+
   }
 
   .nav-item {
@@ -72,9 +72,9 @@
   border-radius: 20px;
   font-weight: 500;
   transition: all 0.3s ease;
-  font-weight:bold;
+  font-weight: bold;
   font-size: 14px;
-  
+
 }
 
 .nav-item:hover {
@@ -83,8 +83,10 @@
 }
 
 .nav-item.active {
-  background-color: #FFECF6; /* açık pembe */
-  color: #DF2F80; /* primary */
+  background-color: #FFECF6;
+  /* açık pembe */
+  color: #DF2F80;
+  /* primary */
 }
 
 .wp-button {
@@ -95,8 +97,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 45px;            
-  height: 180px;        
+  width: 45px;
+  height: 180px;
   color: white;
   text-decoration: none;
   border-radius: 10px 0 0 10px;
@@ -111,10 +113,10 @@
 }
 
 .wp-text {
-  writing-mode: vertical-lr; 
-  transform: rotate(180deg); 
-  font-size: 13px;           
-  font-weight: 700;          
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  font-size: 13px;
+  font-weight: 700;
   margin-top: 5px;
 }
 
@@ -136,12 +138,14 @@
     padding: 0;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
     z-index: 9999;
   }
+
   .wp-text {
     display: none;
   }
+
   .wp-icon {
     transform: rotate(0deg);
     margin: 0;

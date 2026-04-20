@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AppointmentsPages from "./AppointmentsPages";
 import MessagesPages from "./MessagesPages";
 import GalleryPages from "./GalleryPages";
+import ServicesPages from "./ServicesPages";
 import Header from "./components/Header";
 import Dashboard from "./DashboardPages";
 import UserManagementPage from "./UserManagementPage.jsx";
@@ -15,6 +16,7 @@ const Menu = () => {
     { id: "dashboard", label: "Dashboard" },
     { id: "randevular", label: "Randevular" },
     { id: "mesajlar", label: "Gelen Mesajlar" },
+    { id: "hizmetler", label: "Hizmet Yönetimi" },
     { id: "galeri", label: "Galeri" },
     { id: "kullanicilar", label: "Kullanıcı Yönetimi" }
   ];
@@ -40,6 +42,8 @@ const Menu = () => {
         return <MessagesPages />;
       case "galeri":
         return <GalleryPages />;
+      case "hizmetler":
+        return <ServicesPages />;
       case "kullanicilar":
         return <UserManagementPage />;
       default:

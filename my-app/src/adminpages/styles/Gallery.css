@@ -202,67 +202,139 @@ margin-bottom: 10px;
   color: white;
 }
 
+/* ... (existing styles) ... */
+
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 10px 0;
 }
 
 .gallery-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  position: relative;
+  background: var(--white);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: none;
 }
 
 .gallery-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(223, 47, 128, 0.15);
 }
 
+.gallery-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
 
 .gallery-image {
   width: 100%;
-  height: 150px;
+  height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-card:hover .gallery-image {
+  transform: scale(1.1);
+}
+
+/* Premium Overlay */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.gallery-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-action-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--black);
+}
+
+.card-action-btn.edit {
+  color: #2196F3;
+}
+
+.card-action-btn.delete {
+  color: #F44336;
+}
+
+.card-action-btn:hover {
+  transform: scale(1.15) rotate(5deg);
+  background: var(--white);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .card-info {
-  padding: 10px;
+  padding: 15px;
+  background: var(--white);
 }
 
 .card-info h5 {
   margin: 0;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 17px;
+  font-weight: 700;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-info p {
-  margin: 5px 0 0;
-  font-size: 14px;
-  color: #555;
-}
-.gallery-card {
-  position: relative; /* Mutlaka ekle */
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #777;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .card-category {
   position: absolute;
-  bottom: 8px;
-  right: 8px;
-  display: inline-block;
-  font-size: 12px;
-  font-weight: bold;
-  color: var(--primary);
-  background-color: var(--background);
-  padding: 2px 6px;
-  border-radius: 5px;
-  text-align: center;
+  top: 12px;
+  left: 12px;
+  background: rgba(223, 47, 128, 0.9);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  z-index: 1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
+
+/* Scrollbar and utilities */
 div::-webkit-scrollbar {
   display: none;
 }

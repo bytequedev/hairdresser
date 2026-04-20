@@ -1,9 +1,9 @@
 import React from "react";
 import "../../styles/Works.css";
 
-const WorksCard = ({ icon, title, desc }) => {
+const WorksCard = ({ icon, title, desc, onClick }) => {
   return (
-    <div className="works-card">
+    <div className="works-card" onClick={onClick} style={{ cursor: 'pointer' }}>
       <div className="icon-box">{icon}</div>
       <h3 className="card-title">{title}</h3>
       <p className="card-desc">{desc}</p>
