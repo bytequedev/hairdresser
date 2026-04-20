@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <section className="home-page" id="anasayfa">
       <div className="container-fluid py-5 px-4 px-lg-5">
-        <div className="row align-items-start g-4 g-lg-5 mx-0">
+        <div className="row align-items-start g-4 g-lg-5 mt-5">
             <HeroSection />
             <LogoSection />
         </div>

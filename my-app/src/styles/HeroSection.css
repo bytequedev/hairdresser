@@ -1,0 +1,14 @@
+/* Animasyonlu başlık harfleri için stil */
+.hero-animated-title .hero-letter {
+  opacity: 0;
+  transform: translateY(30px);
+  display: inline-block;
+  animation: heroLetterIn 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes heroLetterIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
