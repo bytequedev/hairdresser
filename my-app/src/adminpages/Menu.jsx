@@ -4,6 +4,7 @@ import MessagesPages from "./MessagesPages";
 import GalleryPages from "./GalleryPages";
 import Header from "./components/Header";
 import Dashboard from "./DashboardPages";
+import UserManagementPage from "./UserManagementPage.jsx";
 import "./styles/Menu.css";
 
 const Menu = () => {
@@ -14,7 +15,8 @@ const Menu = () => {
     { id: "dashboard", label: "Dashboard" },
     { id: "randevular", label: "Randevular" },
     { id: "mesajlar", label: "Gelen Mesajlar" },
-    { id: "galeri", label: "Galeri" }
+    { id: "galeri", label: "Galeri" },
+    { id: "kullanicilar", label: "Kullanıcı Yönetimi" }
   ];
 
   const handleMenuClick = (itemId) => {
@@ -26,6 +28,8 @@ const Menu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+
+
   const renderContent = () => {
     switch (active) {
       case "dashboard":
@@ -36,6 +40,8 @@ const Menu = () => {
         return <MessagesPages />;
       case "galeri":
         return <GalleryPages />;
+      case "kullanicilar":
+        return <UserManagementPage />;
       default:
         return <Dashboard />;
     }

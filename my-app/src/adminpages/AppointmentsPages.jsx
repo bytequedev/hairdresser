@@ -72,6 +72,8 @@ const AppointmentsPages = () => {
   console.log('Filtered Appointments:', filteredAppointments); 
   
   return (
+               <div style={{ height: '74vh', display: 'flex', flexDirection: 'column' }}>
+
     <section className="adminappointment-page" >
       <div className="container">
         <div className="row">
@@ -88,6 +90,8 @@ const AppointmentsPages = () => {
         </div>
       </div>
     </section>
+          </div>
+
   )
 }
 

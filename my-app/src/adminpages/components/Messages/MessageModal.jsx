@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button, Row, Col,Card, CardBody } from "react-bootstrap";
 
-const MessageModal = ({ show, onClose, message, getStatusBadge }) => {
+const MessageModal = ({ show, onClose, message, onMarkAsRead }) => {
   const [modalSize, setModalSize] = useState("lg");
 
   useEffect(() => {
@@ -75,6 +75,11 @@ const MessageModal = ({ show, onClose, message, getStatusBadge }) => {
         </Card>
       </Modal.Body>
       <Modal.Footer>
+        {message && message.status !== "Okundu" && (
+          <Button variant="success" onClick={() => onMarkAsRead(message.id)}>
+            Okundu
+          </Button>
+        )}
         <Button variant="secondary" onClick={onClose}>
           Kapat
         </Button>

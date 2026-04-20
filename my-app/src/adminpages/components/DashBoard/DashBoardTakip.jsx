@@ -17,7 +17,7 @@ const DashBoardTakip = () => {
 
   return (
 <div className="container pt-2">
-      <div className="d-flex justify-content-end mb-1">
+      <div className="d-flex justify-content-end mb-1 mt-2">
         <DatePicker
           selected={selectedDate}
           onChange={(date) => setSelectedDate(date)}

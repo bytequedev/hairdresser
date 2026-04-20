@@ -82,6 +82,7 @@ const AdminMessagesGrid = ({ messages, onMarkAsRead,onDelete }) => {
     <div className="text-center text-muted py-4">Gösterilecek mesaj yok.</div>
   );
 
+
   return (
     <div className="messages-container">
       {/* Masaüstü görünüm */}
@@ -115,28 +116,19 @@ const AdminMessagesGrid = ({ messages, onMarkAsRead,onDelete }) => {
               <Col style={{ flex: 2 }}>{item.current_date}</Col>
               <Col style={{ flex: 1 }}>{getStatusBadge(item.status)}</Col>
               <Col style={{ flex: 1.2 }} className="text-end">
-  <i
-    className="fa-solid fa-eye text-primary me-3"
-    style={{ cursor: "pointer", fontSize: "1rem" }}
-    title="Detay"
-    onClick={() => handleOpenModal(item)}
-  />
-  {item.status !== "Okundu" && (
-    <i
-      className="fa-solid fa-check text-success me-3"
-      style={{ cursor: "pointer", fontSize: "1rem" }}
-      title="Okundu olarak işaretle"
-      onClick={() => onMarkAsRead(item.id)}
-    />
-  )}
-  <i
-    className="fa-solid fa-trash text-danger"
-    style={{ cursor: "pointer", fontSize: "1rem" }}
-    title="Mesajı sil"
-    onClick={() => onDelete(item.id)} // 🗑️
-  />
-</Col>
-
+                <i
+                  className="fa-solid fa-eye text-primary me-3"
+                  style={{ cursor: "pointer", fontSize: "1rem" }}
+                  title="Detay"
+                  onClick={() => handleOpenModal(item)}
+                />
+                <i
+                  className="fa-solid fa-trash text-danger"
+                  style={{ cursor: "pointer", fontSize: "1rem" }}
+                  title="Mesajı sil"
+                  onClick={() => onDelete(item.id)}
+                />
+              </Col>
             </Row>
           ))
         ) : (
@@ -159,6 +151,7 @@ const AdminMessagesGrid = ({ messages, onMarkAsRead,onDelete }) => {
         onClose={handleCloseModal}
         message={selectedMessage}
         getStatusBadge={getStatusBadge}
+        onMarkAsRead={onMarkAsRead}
       />
     </div>
   );
