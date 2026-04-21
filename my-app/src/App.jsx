@@ -13,6 +13,7 @@ import Footer from './pages/Footer'
 import Menu from './adminpages/Menu'
 import AdminLogin from './adminpages/AdminLogin'
 import WhatsappButton from './components/Header/WhatsappButton'
+import BottomNavBar from './components/Header/BottomNavBar'
 
 // 🟢 Toastify importları
 import { ToastContainer } from 'react-toastify'
@@ -23,8 +24,10 @@ import 'react-toastify/dist/ReactToastify.css'
 function AppContent() {
   const location = useLocation();
   const showWhatsapp = location.pathname !== '/admin';
+  const showBottomNav = location.pathname !== '/admin';
   const [adminLogged, setAdminLogged] = useState(false);
   const [galleryCategory, setGalleryCategory] = useState("Tümü");
+  const [activeSection, setActiveSection] = useState("anasayfa");
 
   useEffect(() => {
     const isAdmin = localStorage.getItem("isAdmin") === "true";
@@ -34,13 +37,16 @@ function AppContent() {
   return (
     <>
       {showWhatsapp && <WhatsappButton />}
+      {showBottomNav && (
+        <BottomNavBar active={activeSection} setActive={setActiveSection} />
+      )}
 
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Header />
+              <Header active={activeSection} setActive={setActiveSection} />
               <HomePage />
               <GalleryPage 
                 activeCategory={galleryCategory} 
